@@ -1,0 +1,21 @@
+{
+  "name": "markdownlandingpage-server",
+  "version": "1.0.0",
+  "description": "GraphQL server for markdownlandingpage",
+  "main": "index.js",
+  "author": "JamesAnderegg",
+  "license": "MIT",
+  "scripts" : {
+    "build" : "tsc",
+    "deploy": "npm run build && serverless deploy"
+  },
+  "dependencies": {
+    "@types/aws-lambda": "^8.10.41",
+    "@types/aws-sdk": "^2.7.0",
+    "apollo-server": "^2.10.1",
+    "apollo-server-lambda": "^2.10.1",
+    "aws-lambda": "^1.0.5",
+    "aws-sdk": "^2.620.0",
+    "graphql": "^14.6.0"
+  }
+}
