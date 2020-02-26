@@ -6,14 +6,14 @@ provider:
   stage: dev
 
 functions:
-  graphql:
-    handler: dist/graphql.handler
-    events:
-      - http:
-            path: graphql
-            method: GET
-            cors: true
-      - http:
-            path: graphql
-            method: POST
-            cors: true
+    graphql:
+        handler: dist/graphql.handler
+        events:
+            - http:
+                  path: graphql
+                  method: GET
+                  cors: true
+            - http:
+                  path: graphql
+                  method: POST
+                  cors: true
