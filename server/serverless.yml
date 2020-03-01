@@ -1,9 +1,9 @@
-service: markdownlandingpage
+service: markdown-landingpage
 
 provider:
-  name: aws
-  runtime: nodesjs12.x
-  stage: dev
+    name: aws
+    runtime: nodejs12.x
+    stage: dev
 
 functions:
     graphql:
@@ -17,3 +17,5 @@ functions:
                   path: graphql
                   method: POST
                   cors: true
+
+# // https://stackoverflow.com/questions/55481238/aws-api-gateway-always-returns-502-bad-gateway

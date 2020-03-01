@@ -1,27 +1,29 @@
 import { ApolloServer, gql } from "apollo-server-lambda"
 
+// this is where we define the shape of our API
 const schema = gql`
     type Hello {
         world: String
     }
-    type {
+    type Query {
         hello: Hello
     }
 `
 
+// this is where the shape maps to functions
 const resolvers = {
     Query: {
         hello: () => ({
-            world: "Hello World"
+            world: "Hello this is live data"
         })
     }
 }
 
-const server = new ApolloServer({ typeDefs: schema, resolvers})
+const server = new ApolloServer({ typeDefs: schema, resolvers })
 
 export const handler = server.createHandler({
     cors: {
-        origin: '*',// for security in production, lock this to your real endpoints
+        origin: '*', // for security in production, lock this to your real endpoints
         credentials: true
     }
 })

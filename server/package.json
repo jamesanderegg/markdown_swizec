@@ -1,5 +1,5 @@
 {
-  "name": "markdownlandingpage-server",
+  "name": "markdown-serverless",
   "version": "1.0.0",
   "description": "GraphQL server for markdownlandingpage",
   "main": "index.js",
@@ -22,3 +22,4 @@
     "uuid": "^3.4.0"
   }
 }
+
