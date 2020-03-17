@@ -1,4 +1,4 @@
-service: markdown-landingpage
+service: lambda-markdown-landingpage
 
 provider:
     name: aws
@@ -17,5 +17,3 @@ functions:
                   path: graphql
                   method: POST
                   cors: true
-
-# // https://stackoverflow.com/questions/55481238/aws-api-gateway-always-returns-502-bad-gateway

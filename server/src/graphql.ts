@@ -14,16 +14,16 @@ const schema = gql`
 const resolvers = {
     Query: {
         hello: () => ({
-            world: "Hello this is live data"
+            world: "Hello this is live dataaaaa"
         })
     }
 }
 
-const server = new ApolloServer({ typeDefs: schema, resolvers })
+const server = new ApolloServer({ typeDefs: schema, resolvers });
 
 export const handler = server.createHandler({
     cors: {
-        origin: '*', // for security in production, lock this to your real endpoints
+        origin: "*", // for security in production, lock this to your real endpoints
         credentials: true
     }
-})
+});

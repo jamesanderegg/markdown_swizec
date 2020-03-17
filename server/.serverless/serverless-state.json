@@ -1,12 +1,12 @@
 {
   "service": {
-    "service": "markdown-landingpage",
+    "service": "lambda-markdown-landingpage",
     "serviceObject": {
-      "name": "markdown-landingpage"
+      "name": "lambda-markdown-landingpage"
     },
     "provider": {
       "stage": "dev",
-      "variableSyntax": "\\${([ ~:a-zA-Z0-9._@'\",\\-\\/\\(\\)*?]+?)}",
+      "variableSyntax": "\\${([^{}]+?)}",
       "name": "aws",
       "runtime": "nodejs12.x",
       "region": "us-east-1",
@@ -73,7 +73,7 @@
           "GraphqlLogGroup": {
             "Type": "AWS::Logs::LogGroup",
             "Properties": {
-              "LogGroupName": "/aws/lambda/markdown-landingpage-dev-graphql"
+              "LogGroupName": "/aws/lambda/lambda-markdown-landingpage-dev-graphql"
             }
           },
           "IamRoleLambdaExecution": {
@@ -101,7 +101,7 @@
                     "Fn::Join": [
                       "-",
                       [
-                        "markdown-landingpage-dev",
+                        "lambda-markdown-landingpage-dev",
                         "lambda"
                       ]
                     ]
@@ -117,7 +117,7 @@
                         ],
                         "Resource": [
                           {
-                            "Fn::Sub": "arn:${AWS::Partition}:logs:${AWS::Region}:${AWS::AccountId}:log-group:/aws/lambda/markdown-landingpage-dev*:*"
+                            "Fn::Sub": "arn:${AWS::Partition}:logs:${AWS::Region}:${AWS::AccountId}:log-group:/aws/lambda/lambda-markdown-landingpage-dev*:*"
                           }
                         ]
                       },
@@ -128,7 +128,7 @@
                         ],
                         "Resource": [
                           {
-                            "Fn::Sub": "arn:${AWS::Partition}:logs:${AWS::Region}:${AWS::AccountId}:log-group:/aws/lambda/markdown-landingpage-dev*:*:*"
+                            "Fn::Sub": "arn:${AWS::Partition}:logs:${AWS::Region}:${AWS::AccountId}:log-group:/aws/lambda/lambda-markdown-landingpage-dev*:*:*"
                           }
                         ]
                       }
@@ -141,7 +141,7 @@
                 "Fn::Join": [
                   "-",
                   [
-                    "markdown-landingpage-dev",
+                    "lambda-markdown-landingpage-dev",
                     {
                       "Ref": "AWS::Region"
                     },
@@ -158,9 +158,9 @@
                 "S3Bucket": {
                   "Ref": "ServerlessDeploymentBucket"
                 },
-                "S3Key": "serverless/markdown-landingpage/dev/1583089841496-2020-03-01T19:10:41.496Z/markdown-landingpage.zip"
+                "S3Key": "serverless/lambda-markdown-landingpage/dev/1584483883360-2020-03-17T22:24:43.360Z/lambda-markdown-landingpage.zip"
               },
-              "FunctionName": "markdown-landingpage-dev-graphql",
+              "FunctionName": "lambda-markdown-landingpage-dev-graphql",
               "Handler": "dist/graphql.handler",
               "MemorySize": 1024,
               "Role": {
@@ -177,20 +177,20 @@
               "IamRoleLambdaExecution"
             ]
           },
-          "GraphqlLambdaVersionSvU3fZSznazPexOYiP31kxk8dHazkujmksPbEqqKxY": {
+          "GraphqlLambdaVersionbuJd3acFAOJn2n6ex8n2c1RDNX56TuvnyT6peFyv4": {
             "Type": "AWS::Lambda::Version",
             "DeletionPolicy": "Retain",
             "Properties": {
               "FunctionName": {
                 "Ref": "GraphqlLambdaFunction"
               },
-              "CodeSha256": "kHj0NZ4yHTZHqmZ7bLZCT/e9AWqziuCm6phlqIgWiJo="
+              "CodeSha256": "isYfroFIb7wBTAQM9vKeVm6hdMsSrkSrRjvPvOcpHq0="
             }
           },
           "ApiGatewayRestApi": {
             "Type": "AWS::ApiGateway::RestApi",
             "Properties": {
-              "Name": "dev-markdown-landingpage",
+              "Name": "dev-lambda-markdown-landingpage",
               "EndpointConfiguration": {
                 "Types": [
                   "EDGE"
@@ -345,7 +345,7 @@
               "MethodResponses": []
             }
           },
-          "ApiGatewayDeployment1583089828282": {
+          "ApiGatewayDeployment1584483868539": {
             "Type": "AWS::ApiGateway::Deployment",
             "Properties": {
               "RestApiId": {
@@ -406,7 +406,7 @@
           "GraphqlLambdaFunctionQualifiedArn": {
             "Description": "Current Lambda function version",
             "Value": {
-              "Ref": "GraphqlLambdaVersionSvU3fZSznazPexOYiP31kxk8dHazkujmksPbEqqKxY"
+              "Ref": "GraphqlLambdaVersionbuJd3acFAOJn2n6ex8n2c1RDNX56TuvnyT6peFyv4"
             }
           },
           "ServiceEndpoint": {
@@ -561,22 +561,22 @@
             }
           }
         ],
-        "name": "markdown-landingpage-dev-graphql",
+        "name": "lambda-markdown-landingpage-dev-graphql",
         "package": {},
         "memory": 1024,
         "timeout": 6,
         "runtime": "nodejs12.x",
         "vpc": {},
-        "versionLogicalId": "GraphqlLambdaVersionSvU3fZSznazPexOYiP31kxk8dHazkujmksPbEqqKxY"
+        "versionLogicalId": "GraphqlLambdaVersionbuJd3acFAOJn2n6ex8n2c1RDNX56TuvnyT6peFyv4"
       }
     },
     "serviceFilename": "serverless.yml",
     "layers": {},
     "isDashboardMonitoringPreconfigured": false,
-    "artifact": "C:\\Users\\James\\Documents\\markdown_swizec\\server\\.serverless\\markdown-landingpage.zip"
+    "artifact": "C:\\Users\\James\\Documents\\markdown_swizec\\server\\.serverless\\lambda-markdown-landingpage.zip"
   },
   "package": {
-    "artifactDirectoryName": "serverless/markdown-landingpage/dev/1583089841496-2020-03-01T19:10:41.496Z",
-    "artifact": "markdown-landingpage.zip"
+    "artifactDirectoryName": "serverless/lambda-markdown-landingpage/dev/1584483883360-2020-03-17T22:24:43.360Z",
+    "artifact": "lambda-markdown-landingpage.zip"
   }
 }
