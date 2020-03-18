@@ -5,8 +5,16 @@ const schema = gql`
     type Hello {
         world: String
     }
+    type User {
+        userId: String
+        CreatedAt: String
+        lastSignedInAt: String
+    }
     type Query {
         hello: Hello
+    }
+    type Mutation{
+        updateUser(userId: String): User
     }
 `
 
