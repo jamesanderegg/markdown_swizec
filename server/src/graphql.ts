@@ -1,6 +1,6 @@
-import { ApolloServer, gql } from "apollo-server-lambda"
+import { ApolloServer, gql } from "apollo-server-lambda";
 
-import { updateUser } from "./mutations"
+import { updateUser, createPage } from "./mutations";
 
 // this is where we define the shape of our API
 const schema = gql`
@@ -12,13 +12,21 @@ const schema = gql`
         createdAt: String
         lastSignedInAt: String
     }
+    type LandingPage {
+        userId: String
+        pageId: String
+        createdAt: String
+        pageName: String
+        content: String
+    }
     type Query {
         hello: Hello
     }
-    type Mutation{
+    type Mutation {
         updateUser(userId: String): User
+        createPage(userId: String, pageName: String): LandingPage
     }
-`
+`;
 
 // this is where the shape maps to functions
 const resolvers = {
@@ -28,9 +36,10 @@ const resolvers = {
         })
     },
     Mutation: {
-        updateUser
+        updateUser,
+        createPage
     }
-}
+};
 
 const server = new ApolloServer({ typeDefs: schema, resolvers });
 

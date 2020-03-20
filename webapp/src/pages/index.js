@@ -9,7 +9,7 @@ import { Heading } from "rebass"
 import { useAuth } from "react-use-auth"
 
 import { LoginButton } from '../components/LoginButton';
-
+import { Dashboard } from "../components/Dashboard"
 
 
 const IndexPage = () => {
@@ -20,6 +20,7 @@ const IndexPage = () => {
       <SEO title="Markdown Landing Page" />
       <Heading fontSize={[5, 6, 7]}>Markdown Landing Page</Heading>
       <p>Write a landing page for anything</p>
+      <Dashboard />
       {isAuthenticated() ? <p>hello {user.nickname}</p> : null}
       <LoginButton />
     </Layout>
