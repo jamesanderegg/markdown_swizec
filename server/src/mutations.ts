@@ -10,6 +10,12 @@ type CreatePageParams = {
     pageName: string;
 };
 
+type SavePageParams = {
+    userId: string;
+    pageId: string;
+    content: string;
+};
+
 export const updateUser = async (_: any, params: UserParams): Promise<User> => {
     // see if user exists
     // if not: update createdAt
@@ -62,8 +68,6 @@ export const updateUser = async (_: any, params: UserParams): Promise<User> => {
     };
 };
 
-
-//create page resolver
 export const createPage = async (_: any, params: CreatePageParams) => {
     const pageId = uuidv4();
 
@@ -77,6 +81,27 @@ export const createPage = async (_: any, params: CreatePageParams) => {
         ExpressionAttributeValues: {
             ":pageName": params.pageName,
             ":createdAt": new Date().toISOString()
+        },
+        ReturnValues: "ALL_NEW"
+    });
+
+    return result.Attributes;
+};
+
+export const savePage = async (_: any, params: SavePageParams) => {
+    console.log(params);
+
+    const result = await updateItem({
+        TableName: process.env.PAGE_TABLE!,
+        Key: {
+            userId: params.userId,
+            pageId: params.pageId
+        },
+        UpdateExpression:
+            "SET content = :content, lastUpdatedAt = :lastUpdatedAt",
+        ExpressionAttributeValues: {
+            ":content": params.content,
+            ":lastUpdatedAt": new Date().toISOString()
         },
         ReturnValues: "ALL_NEW"
     });

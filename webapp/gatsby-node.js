@@ -3,6 +3,7 @@
  *
  * See: https://www.gatsbyjs.org/docs/node-apis/
  */
+//node library for resolving file paths
 const path = require("path")
 
 // creating Gatsby pages for every entry in our dataset

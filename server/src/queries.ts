@@ -8,6 +8,7 @@ export const allPages = async () => {
 
     return result.Items;
 };
+
 type PageParams = {
     userId: string;
     pageId: string;

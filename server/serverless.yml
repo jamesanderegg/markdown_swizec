@@ -1,4 +1,4 @@
-service: lambda-markdown-landingpage
+service: markdownlandingpage
 
 provider:
     name: aws

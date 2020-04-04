@@ -59,7 +59,7 @@
     "GraphqlLogGroup": {
       "Type": "AWS::Logs::LogGroup",
       "Properties": {
-        "LogGroupName": "/aws/lambda/lambda-markdown-landingpage-dev-graphql"
+        "LogGroupName": "/aws/lambda/markdownlandingpage-dev-graphql"
       }
     },
     "IamRoleLambdaExecution": {
@@ -87,7 +87,7 @@
               "Fn::Join": [
                 "-",
                 [
-                  "lambda-markdown-landingpage-dev",
+                  "markdownlandingpage-dev",
                   "lambda"
                 ]
               ]
@@ -103,7 +103,7 @@
                   ],
                   "Resource": [
                     {
-                      "Fn::Sub": "arn:${AWS::Partition}:logs:${AWS::Region}:${AWS::AccountId}:log-group:/aws/lambda/lambda-markdown-landingpage-dev*:*"
+                      "Fn::Sub": "arn:${AWS::Partition}:logs:${AWS::Region}:${AWS::AccountId}:log-group:/aws/lambda/markdownlandingpage-dev*:*"
                     }
                   ]
                 },
@@ -114,7 +114,7 @@
                   ],
                   "Resource": [
                     {
-                      "Fn::Sub": "arn:${AWS::Partition}:logs:${AWS::Region}:${AWS::AccountId}:log-group:/aws/lambda/lambda-markdown-landingpage-dev*:*:*"
+                      "Fn::Sub": "arn:${AWS::Partition}:logs:${AWS::Region}:${AWS::AccountId}:log-group:/aws/lambda/markdownlandingpage-dev*:*:*"
                     }
                   ]
                 },
@@ -128,7 +128,7 @@
                     "dynamodb:UpdateItem",
                     "dynamodb:DeleteItem"
                   ],
-                  "Resource": "arn:aws:dynamodb:us-east-1:*:table/lambda-markdown-landingpage-users-dev"
+                  "Resource": "arn:aws:dynamodb:us-east-1:*:table/markdownlandingpage-users-dev"
                 },
                 {
                   "Effect": "Allow",
@@ -140,7 +140,7 @@
                     "dynamodb:UpdateItem",
                     "dynamodb:DeleteItem"
                   ],
-                  "Resource": "arn:aws:dynamodb:us-east-1:*:table/lambda-markdown-landingpage-pages-dev"
+                  "Resource": "arn:aws:dynamodb:us-east-1:*:table/markdownlandingpage-pages-dev"
                 }
               ]
             }
@@ -151,7 +151,7 @@
           "Fn::Join": [
             "-",
             [
-              "lambda-markdown-landingpage-dev",
+              "markdownlandingpage-dev",
               {
                 "Ref": "AWS::Region"
               },
@@ -168,9 +168,9 @@
           "S3Bucket": {
             "Ref": "ServerlessDeploymentBucket"
           },
-          "S3Key": "serverless/lambda-markdown-landingpage/dev/1584754039159-2020-03-21T01:27:19.159Z/lambda-markdown-landingpage.zip"
+          "S3Key": "serverless/markdownlandingpage/dev/1585956975910-2020-04-03T23:36:15.910Z/markdownlandingpage.zip"
         },
-        "FunctionName": "lambda-markdown-landingpage-dev-graphql",
+        "FunctionName": "markdownlandingpage-dev-graphql",
         "Handler": "dist/graphql.handler",
         "MemorySize": 1024,
         "Role": {
@@ -183,8 +183,8 @@
         "Timeout": 6,
         "Environment": {
           "Variables": {
-            "USER_TABLE": "lambda-markdown-landingpage-users-dev",
-            "PAGE_TABLE": "lambda-markdown-landingpage-pages-dev"
+            "USER_TABLE": "markdownlandingpage-users-dev",
+            "PAGE_TABLE": "markdownlandingpage-pages-dev"
           }
         }
       },
@@ -193,20 +193,20 @@
         "IamRoleLambdaExecution"
       ]
     },
-    "GraphqlLambdaVersiongVDSnRR3B3NkSohAsRsw1Pbi4z16YPD6QHfKnkYNu4s": {
+    "GraphqlLambdaVersion6YVEiO6HpdOEeHBEG38rkCkO8sAxcQnhCTAzLsWZqhk": {
       "Type": "AWS::Lambda::Version",
       "DeletionPolicy": "Retain",
       "Properties": {
         "FunctionName": {
           "Ref": "GraphqlLambdaFunction"
         },
-        "CodeSha256": "Uo690L+YH1kmoUhcNDsVN7k5kM2LyEgtgBzOfD4/gV4="
+        "CodeSha256": "pPVG3r0hZZcLDMS1aGl9X3ETpB+MPKzIxZCCsob8Pwk="
       }
     },
     "ApiGatewayRestApi": {
       "Type": "AWS::ApiGateway::RestApi",
       "Properties": {
-        "Name": "dev-lambda-markdown-landingpage",
+        "Name": "dev-markdownlandingpage",
         "EndpointConfiguration": {
           "Types": [
             "EDGE"
@@ -361,7 +361,7 @@
         "MethodResponses": []
       }
     },
-    "ApiGatewayDeployment1584754028764": {
+    "ApiGatewayDeployment1585956958760": {
       "Type": "AWS::ApiGateway::Deployment",
       "Properties": {
         "RestApiId": {
@@ -431,7 +431,7 @@
           "ReadCapacityUnits": 1,
           "WriteCapacityUnits": 1
         },
-        "TableName": "lambda-markdown-landingpage-users-dev"
+        "TableName": "markdownlandingpage-users-dev"
       }
     },
     "PagesTable": {
@@ -461,7 +461,7 @@
           "ReadCapacityUnits": 1,
           "WriteCapacityUnits": 1
         },
-        "TableName": "lambda-markdown-landingpage-pages-dev"
+        "TableName": "markdownlandingpage-pages-dev"
       }
     }
   },
@@ -474,7 +474,7 @@
     "GraphqlLambdaFunctionQualifiedArn": {
       "Description": "Current Lambda function version",
       "Value": {
-        "Ref": "GraphqlLambdaVersiongVDSnRR3B3NkSohAsRsw1Pbi4z16YPD6QHfKnkYNu4s"
+        "Ref": "GraphqlLambdaVersion6YVEiO6HpdOEeHBEG38rkCkO8sAxcQnhCTAzLsWZqhk"
       }
     },
     "ServiceEndpoint": {
