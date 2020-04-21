@@ -194,7 +194,7 @@
                 "S3Bucket": {
                   "Ref": "ServerlessDeploymentBucket"
                 },
-                "S3Key": "serverless/markdownlandingpage/dev/1587503857595-2020-04-21T21:17:37.595Z/markdownlandingpage.zip"
+                "S3Key": "serverless/markdownlandingpage/dev/1587510143017-2020-04-21T23:02:23.017Z/markdownlandingpage.zip"
               },
               "FunctionName": "markdownlandingpage-dev-graphql",
               "Handler": "dist/graphql.handler",
@@ -219,14 +219,14 @@
               "IamRoleLambdaExecution"
             ]
           },
-          "GraphqlLambdaVersion4joyYSyhQugPNOCw9PIhe07K9T7ApFQISBFzeR1xjI": {
+          "GraphqlLambdaVersionlz5OkJWCIKdFPLeE3fYzjQVHnr1bouRPZFY5fPYdA": {
             "Type": "AWS::Lambda::Version",
             "DeletionPolicy": "Retain",
             "Properties": {
               "FunctionName": {
                 "Ref": "GraphqlLambdaFunction"
               },
-              "CodeSha256": "QPDrmj3nOROSA5ummczooGZEIWJZ1s5PzLAEPsOhKhw="
+              "CodeSha256": "kcnvLm9aVcN9K0YAsm/Nj91W8K/M8hYre63zw1QqofY="
             }
           },
           "ApiGatewayRestApi": {
@@ -387,7 +387,7 @@
               "MethodResponses": []
             }
           },
-          "ApiGatewayDeployment1587503841862": {
+          "ApiGatewayDeployment1587510131595": {
             "Type": "AWS::ApiGateway::Deployment",
             "Properties": {
               "RestApiId": {
@@ -500,7 +500,7 @@
           "GraphqlLambdaFunctionQualifiedArn": {
             "Description": "Current Lambda function version",
             "Value": {
-              "Ref": "GraphqlLambdaVersion4joyYSyhQugPNOCw9PIhe07K9T7ApFQISBFzeR1xjI"
+              "Ref": "GraphqlLambdaVersionlz5OkJWCIKdFPLeE3fYzjQVHnr1bouRPZFY5fPYdA"
             }
           },
           "ServiceEndpoint": {
@@ -661,7 +661,7 @@
         "timeout": 6,
         "runtime": "nodejs12.x",
         "vpc": {},
-        "versionLogicalId": "GraphqlLambdaVersion4joyYSyhQugPNOCw9PIhe07K9T7ApFQISBFzeR1xjI"
+        "versionLogicalId": "GraphqlLambdaVersionlz5OkJWCIKdFPLeE3fYzjQVHnr1bouRPZFY5fPYdA"
       }
     },
     "resources": {
@@ -727,7 +727,7 @@
     "artifact": "C:\\Users\\James\\Documents\\markdown_swizec\\server\\.serverless\\markdownlandingpage.zip"
   },
   "package": {
-    "artifactDirectoryName": "serverless/markdownlandingpage/dev/1587503857595-2020-04-21T21:17:37.595Z",
+    "artifactDirectoryName": "serverless/markdownlandingpage/dev/1587510143017-2020-04-21T23:02:23.017Z",
     "artifact": "markdownlandingpage.zip"
   }
 }
