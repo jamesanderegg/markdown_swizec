@@ -1,6 +1,6 @@
-import { useState, useEffect } from "react"
-import remark from "remark"
-import remark2react from "remark-react"
+import { useState, useEffect } from "react";
+import remark from "remark";
+import remark2react from "remark-react";
 
 export const remarkCompile = input =>
   new Promise((resolve, reject) => {
